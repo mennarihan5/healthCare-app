@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Login/ Sign up</title>
+</head>
+<body>
+    <div class="container">
+        <!-- LOGIN/ SIGNUP BUTTONS -->
+        <div class="login-sinup-btns">
+            <ul class="nav nav-underline">
+                <li class="nav-item login-btn">
+                  <a class="nav-link" aria-current="page" href="#">Login</a>
+                </li>
+                <li class="nav-item signup-btn">
+                  <a class="nav-link" href="#">Sign up</a>
+                </li>
+              </ul>
+        </div>
+        <!-- LOGIN -->
+        <form class="login-form hide-login">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          <!-- SIGN UP -->
+          <form class="signup-form active-signup">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+            <div class="mb-3">
+                <label for="inputZip">mobile</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="mobile">
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="inputZip" placeholder="job function">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Country*" aria-label="country">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="City" aria-label="city">
+                </div>
+            </div>
+            <select class="form-select" aria-label="job role dropdown">
+                <option selected>What's your job role?</option>
+                <option value="1">Doctor</option>
+                <option value="2">Pharmacist</option>
+                <option value="3">Nurse</option>
+                <option value="4">Other</option>
+            </select>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="job-role" placeholder="If other, please mention your job role here">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="company" placeholder="Your company">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="file" id="formFile" placeholder="Upload your company's logo">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Get free access</button>
+              </div>
+            <div class="accept">
+                <p>By creating an account, you agree to our <span>Terms of service</span> and <span>Privacy policy</span></p>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

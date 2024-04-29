@@ -1,0 +1,34 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: black;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+@mixin customContainer() {
+    width: 50%;
+}
+
+.container {
+    @include customContainer();
+}
+
+.active-signup {
+    display: block;
+    transition: 0.6s;
+}
+.hide-signup {
+    display: none;
+    transition: 0.6s;
+}
+.hide-login {
+    display: none;
+    transition: 0.6s;
+}
+.active-login {
+    display: block;
+    transition: 0.6s;
+}
