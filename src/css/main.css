@@ -11987,4 +11987,12 @@ textarea.form-control-lg {
 .active-login {
   display: block;
   transition: 0.6s;
+}
+
+.other-input {
+  display: none;
+}
+
+.active-other-input {
+  display: block;
 }/*# sourceMappingURL=main.css.map */

@@ -13,9 +13,8 @@ $primary: black;
 }
 
 .container {
-    @include customContainer();
+    @include customContainer();;
 }
-
 .active-signup {
     display: block;
     transition: 0.6s;
@@ -31,4 +30,10 @@ $primary: black;
 .active-login {
     display: block;
     transition: 0.6s;
+}
+.other-input {
+    display: none;
+}
+.active-other-input {
+    display: block;
 }
