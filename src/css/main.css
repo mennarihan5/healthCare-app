@@ -11969,30 +11969,14 @@ textarea.form-control-lg {
   width: 50%;
 }
 
-.active-signup {
-  display: block;
-  transition: 0.6s;
-}
-
-.hide-signup {
+.login-form {
   display: none;
-  transition: 0.6s;
 }
 
-.hide-login {
+.signup-form {
   display: none;
-  transition: 0.6s;
-}
-
-.active-login {
-  display: block;
-  transition: 0.6s;
 }
 
 .other-input {
   display: none;
-}
-
-.active-other-input {
-  display: block;
 }/*# sourceMappingURL=main.css.map */
