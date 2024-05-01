@@ -21,7 +21,7 @@
               </ul>
         </div>
         <!-- LOGIN -->
-        <form class="login-form hide-login">
+        <form class="login-form">
             <div class="mb-3">
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email*">
             </div>
@@ -31,55 +31,70 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
           <!-- SIGN UP -->
-          <form class="signup-form active-signup">
+          <form class="signup-form">
             <h4>Register to get free access</h4>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" placeholder="Full Name">
+                <input type="text" class="form-control" id="signup-username" placeholder="Username" aria-label="Username" placeholder="Full Name">
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email*">
+                <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Email*">
               </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="number" placeholder="WhatsApp number* ex.(+201022644578)">
+                <input type="text" class="form-control" id="signup-number" placeholder="WhatsApp number* ex.(+201022644578)">
             </div>
             <div class="mb-3">
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password*">
+            <input type="password" class="form-control" id="signup-password" placeholder="Password*">
             </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="job-function" placeholder="What's your job function?*">
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Country*" aria-label="country">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="City" aria-label="city">
-                </div>
-            </div>
-            <select class="form-select" aria-label="job role dropdown">
-                <option selected>What's your job role?</option>
-                <option value="1">Doctor</option>
-                <option value="2">Pharmacist</option>
-                <option value="3">Nurse</option>
-                <option class="other-option" value="4">Other</option>
-            </select>
-            <div class="other-input" class="mb-3">
-                <input type="text" class="form-control" id="job-role" placeholder="If other, please mention your job role here">
-            </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="company" placeholder="Your company">
-            </div>
-            <div class="mb-3">
-                <input class="form-control" type="file" id="formFile" placeholder="Upload your company's logo">
-            </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">Get free access</button>
+            <select class="form-select job-function"  onchange="otherOptionFunction()" aria-label="job function dropdown">
+              <option selected>What's your job function?</option>
+              <option value="1">Doctor</option>
+              <option value="2">Pharmacist</option>
+              <option value="3">Nurse</option>
+              <option class="other-option-function" value="other">Other</option>
+          </select>
+          <div class="other-input other-input-function" class="mb-3">
+            <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
+          </div>
+          <div class="row">
+              <div class="col">
+                <select class="country" id="country" name="country" aria-label="country dropdown">
+                  <option selected>Country*</option>
+              </select>
               </div>
-            <div class="accept">
-                <p>By creating an account, you agree to our <span>Terms of service</span> and <span>Privacy policy</span></p>
+              <div class="col">
+                <input type="text" class="form-control" id="city" name="city"  placeholder="City" aria-label="city">
+              </div>
+          </div>
+          <select class="form-select job-role" onchange="otherOptionFunction()" aria-label="job role dropdown">
+              <option selected>What's your job role?</option>
+              <option value="1">Supply Chain</option>
+              <option value="2">Clinical Protocol</option>
+              <option value="3">Policy Maker</option>
+              <option value="3">Health Economist</option>
+              <option value="3">Clinician</option>
+              <option value="3">Inventory management</option>
+              <option value="3">Clinical Pharmacist</option>
+              <option value="3">Procurement</option>
+              <option value="3">Insurer</option>
+              <option value="3">Budgeting/Cost control</option>
+              <option class="other-option-role" value="other">Other</option>
+          </select>
+          <div class="other-input other-input-role" class="mb-3">
+              <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
+          </div>
+          <div class="mb-3">
+              <input type="text" class="form-control" id="signup-company" name="company" placeholder="Your company">
+          </div>
+          <div class="mb-3">
+              <input class="form-control" type="file" id="formFile" placeholder="Upload your company's logo">
+          </div>
+          <div class="d-grid gap-2">
+              <button class="btn btn-primary" id="signup-submit" type="button">Get free access</button>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          <div class="accept">
+              <p>By creating an account, you agree to our <span>Terms of service</span> and <span>Privacy policy</span></p>
+          </div>
+        </form>
     </div>
     <script src="./main.js"></script>
 </body>
