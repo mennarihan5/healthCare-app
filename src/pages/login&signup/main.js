@@ -90,15 +90,17 @@ const checkInputs = () => {
 
 // CLEARING INPUTS ON REFRESH
 function clearInput() {
-    
     for (let i = 0; i < inputElements.length; i++) {
-        inputElements[i].value = "";
+        if (inputElements[i].type === 'submit') {
+            continue;
+        } else {
+            inputElements[i].value = "";
+        }
     }
 
     selectElement.forEach(element => {
         element.selectedIndex = 0;
-    })
-    
+    });
 }
 
 window.addEventListener('load', clearInput);
