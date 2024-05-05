@@ -3,99 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="../../css/main.css">
-    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <title>Login/ Sign up</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
+      <header class="d-flex justify-content-between align-items-center">
+        <div class="logo img-fluid px-2">
+            <img src="../../../assets/images/green_tree-150-01-removebg-preview.png" alt="">
+        </div>
+        <div class="header-btn p-3">
+            <button class="btn btn-secondary me-md-2 px-4 bg-primary" type="button">
+                <a class="text-white text-decoration-none" href="../../../index.html">Home</a>
+            </button>
+        </div>
+      </header>
+    
+      <div class="container">
         <!-- LOGIN/ SIGNUP BUTTONS -->
-        <div class="login-sinup-btns">
-            <ul class="nav nav-underline">
-                <li class="nav-item login-btn">
-                  <a class="nav-link" aria-current="page" href="#">Login</a>
-                </li>
-                <li class="nav-item signup-btn">
-                  <a class="nav-link" href="#">Sign up</a>
-                </li>
+        <div class="login-sinup-btns mb-5">
+            <ul class="nav nav-underline d-flex justify-content-center pt-5">
+                <div class="btn-wrapper">
+                    <li class="nav-item login-btn display-6 mx-4 border-bottom">
+                      <a class="nav-link" aria-current="page" href="">Login</a>
+                    </li>
+                </div>
+                <div class="btn-wrapper">
+                    <li class="nav-item signup-btn display-6 mx-4 border-bottom">
+                      <a class="nav-link" href="">Sign up</a>
+                    </li>
+                </div>
               </ul>
         </div>
         <!-- LOGIN -->
-        <form class="login-form">
-            <div class="mb-3">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email*">
+        <form class="login-form needs-validation mb-3 form" novalidate>
+            <div class="mb-4 input-parent">
+                <input type="email" class="form-control" id="login-form-username" aria-describedby="emailHelp" placeholder="Email*" required>
+                <div class="invalid-feedback">Please enter a valid email!</div>
+                <div class="valid-feedback"></div>
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password*">
+            <div class="mb-4 input-parent">
+                <input type="password" class="form-control" id="login-form-password" placeholder="Password*" required>
+                <div class="invalid-feedback">Please enter a valid password!</div>
+                <div class="valid-feedback"></div>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <input type="submit" class="btn btn-primary mb-4 text-white" value="Login"/>
+            <p class="signup-link">Don't have an account? <a class="text-decoration-none" href="">Sign up</a></p>
         </form>
           <!-- SIGN UP -->
-          <form class="signup-form">
-            <h4>Register to get free access</h4>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="signup-username" placeholder="Username" aria-label="Username" placeholder="Full Name">
+          <form class="signup-form needs-validation mb-3 form" novalidate>
+            <h4 class="signup-title mb-4 text-primary">Register to get free access</h4>
+            <div class="row username-row input-parent mb-4">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <input type="text" class="form-control" id="signup-firstname" aria-label="firstname" placeholder="First Name" pattern="([a-zA-Z].*?){3}" required>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <input type="text" class="form-control" id="signup-lastname" aria-label="lastname" placeholder="Last Name" pattern="([a-zA-Z].*?){3}" required>
+                </div>
+                <div class="invalid-feedback">Please enter a valid username!</div>
+              <div class="valid-feedback"></div>
             </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Email*">
+            <div class="mb-4 input-parent">
+                <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Email*" required>
+                <div class="invalid-feedback">Please enter a valid email!</div>
+                <div class="valid-feedback"></div>
               </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="signup-number" placeholder="WhatsApp number* ex.(+201022644578)">
+            <div class="mb-4 input-parent">
+                <input type="tel" class="form-control" id="signup-number" placeholder="WhatsApp number* ex.(+201022644578)" pattern="^01[0-2,5]\d{8}$" required>
+                <div class="invalid-feedback">Please enter a valid Mobile number!</div>
+                <div class="valid-feedback"></div>
             </div>
-            <div class="mb-3">
-            <input type="password" class="form-control" id="signup-password" placeholder="Password*">
+            <div class="mb-4 input-parent">
+                <input type="password" class="form-control" id="signup-password" placeholder="Password*" minlength="8" required>
+                <div class="invalid-feedback">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji. </div>
+                <div class="valid-feedback"></div>
             </div>
-            <select class="form-select job-function"  onchange="otherOptionFunction()" aria-label="job function dropdown">
-              <option selected>What's your job function?</option>
-              <option value="1">Doctor</option>
-              <option value="2">Pharmacist</option>
-              <option value="3">Nurse</option>
-              <option class="other-option-function" value="other">Other</option>
-          </select>
-          <div class="other-input other-input-function" class="mb-3">
-            <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
+            <div class="input-group">
+                <select class="form-select job-function input-parent mb-4"  onchange="otherOptionFunction()" aria-label="job function dropdown" required>
+                    <option selected>What's your job function?</option>
+                    <option value="1">Doctor</option>
+                    <option value="2">Pharmacist</option>
+                    <option value="3">Nurse</option>
+                    <option class="other-option-function" value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select your job function!</div>
+                <div class="valid-feedback"></div>
+            </div>
+            <div class="other-input-function input-parent mb-4">
+                <input type="text" class="form-control col-12" id="job-role" placeholder="Other (Please Specify)">
+                <div class="invalid-feedback col">Please enter your job function!</div>
+                <div class="valid-feedback"></div>
+            </div>
+            <div class="row country-row mb-4">
+                <div class="col-lg-6 col-md-6 col-sm-12 input-parent">
+                    <select class="form-select form-control country" id="country" name="country" aria-label="country dropdown" required>
+                      <option selected>Country*</option>
+                    </select>
+                    <div class="invalid-feedback">Please enter select a country!</div>
+                    <div class="valid-feedback"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <input type="text" class="form-control" id="city" name="city"  placeholder="City" aria-label="city">
+                </div>
+            </div>
+            <select class="form-select job-role input-parent mb-4" onchange="otherOptionFunction()" aria-label="job role dropdown">
+                <option selected>What's your job role?</option>
+                <option value="1">Supply Chain</option>
+                <option value="2">Clinical Protocol</option>
+                <option value="3">Policy Maker</option>
+                <option value="3">Health Economist</option>
+                <option value="3">Clinician</option>
+                <option value="3">Inventory management</option>
+                <option value="3">Clinical Pharmacist</option>
+                <option value="3">Procurement</option>
+                <option value="3">Insurer</option>
+                <option value="3">Budgeting/Cost control</option>
+                <option class="other-option-role" value="other">Other</option>
+            </select>
+            <div class="other-input-role mb-4">
+                <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
+            </div>
+          <div class="mb-4 input-parent">
+              <input type="text" class="form-control" id="signup-company" name="company" placeholder="Your company*" required>
+              <div class="invalid-feedback">Please enter your workplace!</div>
+              <div class="valid-feedback"></div>
           </div>
-          <div class="row">
-              <div class="col">
-                <select class="country" id="country" name="country" aria-label="country dropdown">
-                  <option selected>Country*</option>
-              </select>
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" id="city" name="city"  placeholder="City" aria-label="city">
-              </div>
-          </div>
-          <select class="form-select job-role" onchange="otherOptionFunction()" aria-label="job role dropdown">
-              <option selected>What's your job role?</option>
-              <option value="1">Supply Chain</option>
-              <option value="2">Clinical Protocol</option>
-              <option value="3">Policy Maker</option>
-              <option value="3">Health Economist</option>
-              <option value="3">Clinician</option>
-              <option value="3">Inventory management</option>
-              <option value="3">Clinical Pharmacist</option>
-              <option value="3">Procurement</option>
-              <option value="3">Insurer</option>
-              <option value="3">Budgeting/Cost control</option>
-              <option class="other-option-role" value="other">Other</option>
-          </select>
-          <div class="other-input other-input-role" class="mb-3">
-              <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
-          </div>
-          <div class="mb-3">
-              <input type="text" class="form-control" id="signup-company" name="company" placeholder="Your company">
-          </div>
-          <div class="mb-3">
+          <div class="mb-4 input-parent">
               <input class="form-control" type="file" id="formFile" placeholder="Upload your company's logo">
           </div>
-          <div class="d-grid gap-2">
-              <input class="btn btn-primary" id="signup-submit" value="Get free access" type="submit" />
+          <div class="d-grid gap-2 mb-4">
+              <input class="btn btn-primary text-white" id="signup-submit" type="submit" value="Get free access"/>
           </div>
-          <div class="accept">
-              <p>By creating an account, you agree to our <span>Terms of service</span> and <span>Privacy policy</span></p>
+          <div class="accept mb-4 p-2">
+              <p>By creating an account, you agree to our <a href="">Terms of service</a> and <a href="">Privacy policy</a></p>
           </div>
         </form>
     </div>
+    </div>
+    
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
