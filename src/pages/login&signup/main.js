@@ -9,26 +9,32 @@ const otherInputRole = document.querySelector(".other-input-role");
 const inputElements = document.getElementsByTagName("input");
 const selectElement = document.querySelectorAll(".form-select");
 const countrySelect = document.getElementById("country");
-const signupUserName = document.getElementById("signup-username");
-const signupEmail = document.getElementById("signup-email");
-const signupPassword = document.getElementById("signup-password");
-const signupNum = document.getElementById("signup-number");
-const signupCompany = document.getElementById("company");
-const signupSubmit = document.getElementById("signup-submit");
+const signupLink = document.querySelector(".signup-link");
+
 
 // TOGGLE LOGIN & SIGNUP FORMS
 const toggleLogin = () => {
-    loginBtn.addEventListener("click", () => {
+    loginBtn.addEventListener("click", (event) => {
+        event.preventDefault(); 
         loginForm.style.display = "block";
         signupForm.style.display = "none"; 
     });
 
-    signupBtn.addEventListener("click", () => {
+    signupBtn.addEventListener("click", (event) => {
+        event.preventDefault(); 
         signupForm.style.display = "block";
         loginForm.style.display = "none"; 
     });
 }
 
+toggleLogin();
+
+// SIGNUP LINK
+signupLink.addEventListener("click", (event) => {
+    event.preventDefault(); 
+    signupForm.style.display = "block";
+    loginForm.style.display = "none";
+});
 
 // OTHER INPUT FIELD
 const otherOptionFunction = () => {
@@ -44,6 +50,7 @@ const otherOptionFunction = () => {
     }
 }
 
+
 // COUNTRIES DROPDOWN API
 document.addEventListener("DOMContentLoaded", ()=> {
     async function fetchData() {
@@ -51,11 +58,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
           const response = await fetch('https://countriesnow.space/api/v0.1/countries/positions'); 
           if (response.ok) {
             const data = await response.json();
-            console.log(data);
             let result = '';
             data.data.forEach((country) => {
                 result += `<option>${country.name}</option>`
-                console.log(country)
             })
             countrySelect.innerHTML += result;
 
@@ -71,22 +76,19 @@ document.addEventListener("DOMContentLoaded", ()=> {
 })
 
 // FORM VALIDATION
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+const forms = document.querySelectorAll(".needs-validation");
 
-    checkInputs();
-})
-
-const checkInputs = () => {
-    const jobFunctionValue = jobFunction.value.trim();
-    const countrySelectValue = countrySelect.value.trim(); 
-    const signupUserNameValue = signupUserName.value.trim(); 
-    const signupEmailValue = signupEmail.value.trim(); 
-    const signupPasswordValue = signupPassword.value.trim();
-    const signupNumValue = signupNum.value.trim();
-    const signupCompanyValue = signupCompany.value.trim(); 
-
-}
+forms.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+    } 
+    form.classList.add('was-validated'); 
+    console.log("Form validation")
+  },
+  false
+);
+});
 
 // CLEARING INPUTS ON REFRESH
 function clearInput() {
@@ -105,4 +107,3 @@ function clearInput() {
 
 window.addEventListener('load', clearInput);
 
-toggleLogin();
