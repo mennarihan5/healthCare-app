@@ -10,6 +10,12 @@ const inputElements = document.getElementsByTagName("input");
 const selectElement = document.querySelectorAll(".form-select");
 const countrySelect = document.getElementById("country");
 const signupLink = document.querySelector(".signup-link");
+const firstNameInput = document.getElementById('signup-firstname');
+const lastNameInput = document.getElementById('signup-lastname');
+const emailInput = document.getElementById('signup-email');
+const numberInput = document.getElementById('signup-number')
+const passwordInput = document.getElementById('signup-password');
+const companyNameInput = document.getElementById('signup-company');
 
 
 // TOGGLE LOGIN & SIGNUP FORMS
@@ -38,18 +44,21 @@ signupLink.addEventListener("click", (event) => {
 
 // OTHER INPUT FIELD
 const otherOptionFunction = () => {
-    if(jobFunction.value === "other") {
-        otherInputFunc.style.display = "block";
-    } else {
-        otherInputFunc.style.display = "none";
-    }
-    if(jobRole.value === "other") {
-        otherInputRole.style.display = "block";
-    } else {
-        otherInputRole.style.display = "none";
-    }
+        if(jobFunction.value === "other") {
+            otherInputFunc.style.display = "block";
+        } else {
+            otherInputFunc.style.display = "none";
+        }
+        if(jobRole.value === "other") {
+            otherInputRole.style.display = "block";
+        } else {
+            otherInputRole.style.display = "none";
+        }
 }
 
+window.addEventListener('load', otherOptionFunction);
+
+jobFunction.addEventListener("change", otherOptionFunction);
 
 // COUNTRIES DROPDOWN API
 document.addEventListener("DOMContentLoaded", ()=> {
@@ -76,34 +85,132 @@ document.addEventListener("DOMContentLoaded", ()=> {
 })
 
 // FORM VALIDATION
-const forms = document.querySelectorAll(".needs-validation");
+// const forms = document.querySelectorAll(".needs-validation");
 
-forms.forEach((form) => {
-  form.addEventListener('submit', (e) => {
-    if (!form.checkValidity()) {
-      e.preventDefault();
-    } 
-    form.classList.add('was-validated'); 
-    console.log("Form validation")
-  },
-  false
-);
-});
+// forms.forEach((form) => {
+//   form.addEventListener('submit', (e) => {
+//     if (!form.checkValidity()) {
+//       e.preventDefault();
+//     } 
+//     form.classList.add('was-validated'); 
+//     console.log("Form validation")
+//   },
+//   false
+// );
+// });
 
-// CLEARING INPUTS ON REFRESH
-function clearInput() {
-    for (let i = 0; i < inputElements.length; i++) {
-        if (inputElements[i].type === 'submit') {
-            continue;
+ 
+// VALIDATION
+signupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let isValid = true;
+
+        if (firstNameInput.value.trim() === '' || firstNameInput.value.trim().length < 3) {
+            displayError(firstNameInput, 'Please enter a valid first name!');
+            isValid = false;
         } else {
-            inputElements[i].value = "";
+            hideError(firstNameInput);
         }
-    }
 
-    selectElement.forEach(element => {
-        element.selectedIndex = 0;
-    });
+        if (lastNameInput.value.trim() === '' || lastNameInput.value.length < 3) {
+            displayError(lastNameInput, 'Please enter a valid last name!');
+            isValid = false;
+        } else {
+            hideError(lastNameInput);
+        }
+
+        if (!emailIsValid(emailInput.value)) {
+            displayError(emailInput, 'Please enter a valid email!');
+            isValid = false;
+        } else {
+            hideError(emailInput);
+        }
+
+        if (numberInput.value === '' || numberInput.value.length < 11){
+            displayError(numberInput, 'Please enter a valid mobile number!');
+            isValid = false;
+        } else {
+            hideError(numberInput);
+        }
+    
+        if (passwordInput.value === '' || passwordInput.value.length < 8) {
+            displayError(passwordInput, 'Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.');
+            isValid = false;
+        } else {
+            hideError(passwordInput);
+        }
+
+        if (countrySelect.value === 'Country*') {
+            displayError(countrySelect, 'Please select a country!');
+            isValid = false;
+        } else {
+            hideError(countrySelect);
+        }
+
+        if (companyNameInput.value === '') {
+            displayError(companyNameInput, 'Please enter your workplace!');
+            isValid = false;
+        } else {
+            hideError(companyNameInput);
+        }
+
+    // FORM SUBMISSION
+    if (!isValid) {
+        console.log("Form is not submitted");
+    }else {
+        signupForm.submit();
+        console.log("Form submitted (using JavaScript validation)");
+    }
+        
+
+    console.log(isValid)
+})
+// REGEX EMAIL VALIDATION
+function emailIsValid(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-window.addEventListener('load', clearInput);
+// ERROR MESSAGE DISPLAY
+function displayError(element, message) {
+    const errorParent = element.closest('.input-parent');
+    const errorMsg = errorParent.querySelector('.error');
+
+    errorMsg.style.display = 'block';
+    errorMsg.textContent = message;
+    element.classList.add('is-invalid');
+}
+
+// SUCCESS MESSAGE DISPLAY
+function hideError(element) {
+    const successParent = element.closest('.input-parent');
+    const successMsg = successParent.querySelector('.success');
+    const errorParent = element.closest('.input-parent');
+    const errorMsg = errorParent.querySelector('.error');
+
+    successMsg.textContent = '';
+    successMsg.style.display = 'block';
+    errorMsg.style.display = 'none';
+    element.classList.remove('is-invalid');
+}
+
+
+
+
+
+// CLEARING INPUTS ON REFRESH
+// function clearInput() {
+//     for (let i = 0; i < inputElements.length; i++) {
+//         if (inputElements[i].type === 'submit') {
+//             continue;
+//         } else {
+//             inputElements[i].value = "";
+//         }
+//     }
+
+//     selectElement.forEach(element => {
+//         element.selectedIndex = 0;
+//     });
+// }
+
+// window.addEventListener('load', clearInput);
 

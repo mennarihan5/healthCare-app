@@ -12008,8 +12008,12 @@ header {
   transition: all 0.5s ease-in-out;
 }
 
-.signup-form {
+.login-form {
   display: none;
+}
+
+.signup-form {
+  display: block;
 }
 
 .login-form, .signup-form {
@@ -12022,15 +12026,27 @@ header {
   display: none;
 }
 
+.error {
+  color: #dc3545;
+  display: none;
+  padding: 2% 0;
+}
+
+.success {
+  color: #28a745;
+  display: none;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
 @media (max-width: 768px) {
   .login-btn a, .signup-btn a {
     font-size: 1.3rem;
   }
   .btn-wrapper {
     width: 80%;
-  }
-  .signup-form .username-row #signup-firstname {
-    margin-bottom: 1.5rem;
   }
   .country-row #country {
     margin-bottom: 1.5rem;
