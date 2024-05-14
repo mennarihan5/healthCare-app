@@ -40,14 +40,10 @@
         <!-- LOGIN -->
         <form class="login-form mb-3 form">
             <div class="mb-4 input-parent">
-                <input type="email" class="form-control" id="login-form-username" aria-describedby="emailHelp" placeholder="Email*">
-                <div class="error"></div>
-                <div class="success"></div>
+                <input type="email" class="form-control" id="login-form-username" aria-describedby="emailHelp" placeholder="Email*" required>
             </div>
             <div class="mb-4 input-parent">
-                <input type="password" class="form-control" id="login-form-password" placeholder="Password*">
-                <div class="error"></div>
-                <div class="success"></div>
+                <input type="password" class="form-control" id="login-form-password" placeholder="Password*" required>
             </div>
             <input type="submit" class="btn btn-primary mb-4 text-white" value="Login"/>
             <p class="signup-link">Don't have an account? <a class="text-decoration-none" href="">Sign up</a></p>
@@ -57,33 +53,23 @@
             <h4 class="signup-title mb-4 text-primary">Register to get free access</h4>
             <div class="row username-row">
                 <div class="col-lg-6 col-md-6 col-sm-12 firstname-row input-parent mb-4">
-                    <input type="text" class="form-control" id="signup-firstname" aria-label="firstname" placeholder="First Name">
-                    <div class="error"></div>
-                    <div class="success"></div>
+                    <input type="text" class="form-control" id="signup-firstname" aria-label="firstname" placeholder="First Name" required>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 lastname-row input-parent mb-4">
-                    <input type="text" class="form-control" id="signup-lastname" aria-label="lastname" placeholder="Last Name">
-                    <div class="error"></div>
-                    <div class="success"></div>
+                    <input type="text" class="form-control" id="signup-lastname" aria-label="lastname" placeholder="Last Name" required>
                 </div>
             </div>
             <div class="mb-4 input-parent">
-                <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Email*">
-                <div class="error"></div>
-                <div class="success"></div>
+                <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Email*" required>
               </div>
             <div class="mb-4 input-parent">
-                <input type="tel" class="form-control" id="signup-number" placeholder="WhatsApp number* ex.(+201022644578)">
-                <div class="error"></div>
-                <div class="success"></div>
+                <input type="tel" class="form-control" id="signup-number" placeholder="WhatsApp number* ex.(+201022644578)" required>
             </div>
             <div class="mb-4 input-parent">
-                <input type="password" class="form-control" id="signup-password" placeholder="Password*" minlength="8">
-                <div class="error"></div>
-                <div class="success"></div>
+                <input type="password" class="form-control" id="signup-password" placeholder="Password*" minlength="8" required>
             </div>
             <div class="input-group">
-                <select class="form-select job-function input-parent mb-4"  onchange="otherOptionFunction()" aria-label="job function dropdown">
+                <select class="form-select job-function input-parent mb-4"  onchange="otherOptionFunction()" aria-label="job function dropdown" required>
                     <option selected>What's your job function?</option>
                     <option value="1">Doctor</option>
                     <option value="2">Pharmacist</option>
@@ -96,7 +82,7 @@
             </div>
             <div class="row country-row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 input-parent">
-                    <select class="form-select form-control country" id="country" name="country" aria-label="country dropdown">
+                    <select class="form-select form-control country" id="country" name="country" aria-label="country dropdown" required>
                       <option selected>Country*</option>
                     </select>
                     <div class="error">Please enter select a country!</div>
@@ -124,9 +110,7 @@
                 <input type="text" class="form-control" id="job-role" placeholder="Other (Please Specify)">
             </div>
           <div class="mb-4 input-parent">
-              <input type="text" class="form-control" id="signup-company" name="company" placeholder="Your company*">
-              <div class="error"></div>
-              <div class="success"></div>
+              <input type="text" class="form-control" id="signup-company" name="company" placeholder="Your company*" required>
           </div>
           <div class="mb-4 input-parent">
               <input class="form-control" type="file" id="formFile" placeholder="Upload your company's logo">
