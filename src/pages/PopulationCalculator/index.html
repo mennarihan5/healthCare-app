@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>Population Calculator</title>
+</head>
+<body>
+    <div class="container-fluid text-primary">
+        <!-- HEADER -->
+        <header class="d-flex justify-content-between align-items-center">
+            <div class="logo img-fluid px-2">
+                <img src="../../../assets/images/green_tree-150-01-removebg-preview.png" alt="">
+            </div>
+            <div class="header-btn p-3">
+                <button class="btn btn-secondary me-md-2 px-4 bg-primary" type="button">
+                    <a class="text-white text-decoration-none" href="">Logout</a>
+                </button>
+            </div>
+        </header>
+        <div class="container">
+            <h1 class="h3 text-primary text-center m-5">Population Calculator</h1>
+            <form class="population-form d-flex flex-column m-auto m-5">
+                <div class="population-name-wrapper mb-5">
+                    <div class="mb-3">
+                        <label class="mb-3" for="org-name">Organization name</label>
+                        <input class="form-control" type="text" id="org-name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-3" for="total-pop">Total population covered</label>
+                        <input class="form-control" type="text" id="total-pop">
+                    </div>
+                </div>
+                <form action="" class="population-group mb-4">
+                    <h6 class="mb-4">Population/ Patient group</h6>
+                    <div class="inputs row d-flex justify-content-between">
+                        <div class="filter-name-wrapper col-lg-3 col-md-5">
+                            <div class="filter">
+                                <label class="mb-3" for="filter-name">Add filter name</label>
+                                <input class="form-control" type="text" id="filter-name" placeholder="Male/ Female">
+                            </div>
+                            <div class="add-filter mt-4">
+                                <button class="btn">+ Add filter</button>
+                            </div>
+                        </div>
+                        <div class="filter-group col-lg-2 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="filter-input">Patient group</label>
+                                <input class="form-control" type="text" id="filter-input">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="filter-input">
+                            </div>
+                        </div>
+                        <div class="percentage col-lg-4 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="percentage-input">Population percentage</label>
+                                <div class="percentage-input-wrapper row">
+                                    <input class="form-control col" type="text" id="percentage-input" placeholder="60">
+                                    <span class="col-1">%</span>
+                                    <span class="number col-3">Number</span>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="percentage-input-wrapper row">
+                                    <input class="form-control col" type="text" id="percentage-input" placeholder="40">
+                                    <span class="col-1">%</span>
+                                    <span class="number col-3">Number</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description col-lg-3 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="desc-input">Description</label>
+                                <input class="form-control" type="text" id="desc-input">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="desc-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-reset mb-3 mt-4 d-flex justify-content-center gap-2">
+                        <input class="form-control btn btn-primary text-white" type="submit" value="Calculate">
+                        <input class="form-control btn btn-primary text-white" type="submit" value="Reset">
+                    </div>
+                </form>
+                <form action="" class="population-sub-group mb-4 mt-4 disabled">
+                    <h6 class="mb-4">Population/ Patient sub-group</h6>
+                    <div class="inputs row d-flex justify-content-between">
+                        <div class="filter-name-wrapper col-lg-3 col-md-5">
+                            <div class="filter">
+                                <label class="mb-3" for="filter-name">Add filter name</label>
+                                <input class="form-control" type="text" id="filter-name">
+                            </div>
+                            <div class="add-filter mt-4">
+                                <button class="btn">+ Add filter</button>
+                            </div>
+                        </div>
+                        <div class="filter-group col-lg-3 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="filter-input">Patient group</label>
+                                <input class="form-control" type="text" id="filter-input">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="filter-input">
+                            </div>
+                        </div>
+                        <div class="percentage col-lg-3 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="percentage-input">Population percentage</label>
+                                <div class="percentage-input-wrapper row">
+                                    <input class="form-control col" type="text" id="percentage-input" placeholder="60">
+                                    <span class="col-1">%</span>
+                                    <span class="number col-3">Number</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="percentage-input-wrapper row">
+                                    <input class="form-control col" type="text" id="percentage-input" placeholder="40">
+                                    <span class="col-1">%</span>
+                                    <span class="number col-3">Number</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description col-lg-3 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="desc-input">Description</label>
+                                <input class="form-control" type="text" id="desc-input">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="desc-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-reset mb-3 mt-4 d-flex justify-content-center gap-2">
+                        <input class="form-control btn btn-primary text-white" type="submit" value="Calculate">
+                        <input class="form-control btn btn-primary text-white" type="submit" value="Reset">
+                    </div>
+                </form>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
