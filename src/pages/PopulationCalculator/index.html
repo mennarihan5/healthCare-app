@@ -93,7 +93,7 @@
                             <div class="output col-lg-1">
                                 <div class="mb-3">
                                     <label class="mb-3" for="output-input">&nbsp</label>
-                                    <input class="form-control col" type="text" id="output-input">
+                                    <input class="form-control col" type="text" id="output-input" disabled>
                                 </div>
                             </div>
                             <div class="description col-lg-3 col-md-5">
@@ -106,33 +106,38 @@
                     </div>
                     </div>
                     <div class="calc-reset mb-3 mt-4 d-flex justify-content-center gap-2">
-                        <input class="form-control btn btn-primary text-white" type="submit" value="Calculate">
-                        <input class="form-control btn btn-primary text-white" type="submit" value="Reset">
+                        <input class="form-control bg-primary text-white calculate" type="submit" value="Calculate">
+                        <input class="form-control bg-primary text-white reset" type="submit" value="Reset">
                     </div>
                 </form>
                 <form action="" class="population-sub-group mb-4 mt-4">
                     <h6 class="mb-4">Population/ Patient sub-group</h6>
-                    <fieldset>
+                    <fieldset class="fieldset" disabled>
                         <div class="inputs row d-flex justify-content-between">
                             <div class="filter-name-wrapper col-lg-2 col-md-5">
                                 <div class="filter">
-                                    <label class="mb-3" for="filter-name">Add filter name</label>
-                                    <input class="form-control" type="text" id="filter-name" placeholder="Male/ Female">
+                                    <label class="mb-3" for="filter-name2">Add filter name</label>
+                                    <input class="form-control" type="text" id="filter-name2" placeholder="Male/ Female">
+                                </div>
+                                <br>
+                                <br>
+                                <div class="add-filter mt-4">
+                                    Add filter +
                                 </div>
                             </div>
-                        <div class="filter-row-wrapper col-lg-10 col-md-5 row">
-                            <div class="filter-row row">
+                        <div class="filter-row-wrapper2 col-lg-10 col-md-5 row">
+                            <div class="filter-row2 row">
                                 <div class="filter-group col-lg-2 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3 patient-group" for="filter-input">Patient group +</label>
-                                        <input class="form-control filter-input" type="text" id="filter-input">
+                                        <label class="mb-3 patient-group2" for="filter-input2">Patient group +</label>
+                                        <input class="form-control filter-input2" type="text" id="filter-input2">
                                     </div>
                                 </div>
                                 <div class="percentage col-lg-4 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="percentage-input">Population percentage</label>
-                                        <div class="percentage-input-wrapper row">
-                                            <input class="form-control col percentage-input" type="number" id="percentage-input" placeholder="60">
+                                        <label class="mb-3" for="percentage-input2">Population percentage</label>
+                                        <div class="percentage-input-wrapper2 row">
+                                            <input class="form-control col percentage-input2" type="number" id="percentage-input2" placeholder="60">
                                             <span class="col-1">%</span>
                                             <span class="number col-3">Number</span>
                                         </div>
@@ -140,29 +145,29 @@
                                 </div>
                                 <div class="output col-lg-1">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="output-input">&nbsp</label>
-                                        <input class="form-control col" type="text" id="output-input">
+                                        <label class="mb-3" for="output-input2">&nbsp</label>
+                                        <input class="form-control col" type="text" id="output-input2">
                                     </div>
                                 </div>
                                 <div class="description col-lg-3 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="desc-input">Description</label>
-                                        <input class="form-control" type="text" id="desc-input">
+                                        <label class="mb-3" for="desc-input2">Description</label>
+                                        <input class="form-control" type="text" id="desc-input2">
                                     </div>
                                 </div>
                             </div>
                             <div class="filter-row row">
                                 <div class="filter-group col-lg-2 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3 patient-group" for="filter-input">Patient group +</label>
-                                        <input class="form-control filter-input" type="text" id="filter-input">
+                                        <label class="mb-3 patient-group2" for="filter-input2">Patient group +</label>
+                                        <input class="form-control filter-input2" type="text" id="filter-input2">
                                     </div>
                                 </div>
                                 <div class="percentage col-lg-4 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="percentage-input">Population percentage</label>
-                                        <div class="percentage-input-wrapper row">
-                                            <input class="form-control col percentage-input" type="number" id="percentage-input" placeholder="40">
+                                        <label class="mb-3" for="percentage-input2">Population percentage</label>
+                                        <div class="percentage-input-wrapper2 row">
+                                            <input class="form-control col percentage-input2" type="number" id="percentage-input2" placeholder="40">
                                             <span class="col-1">%</span>
                                             <span class="number col-3">Number</span>
                                         </div>
@@ -170,14 +175,14 @@
                                 </div>
                                 <div class="output col-lg-1">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="output-input">&nbsp</label>
-                                        <input class="form-control col" type="text" id="output-input">
+                                        <label class="mb-3" for="output-input2">&nbsp</label>
+                                        <input class="form-control col" type="text" id="output-input2">
                                     </div>
                                 </div>
                                 <div class="description col-lg-3 col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-3" for="desc-input">Description</label>
-                                        <input class="form-control" type="text" id="desc-input">
+                                        <label class="mb-3" for="desc-input2">Description</label>
+                                        <input class="form-control" type="text" id="desc-input2">
                                     </div>
                                 </div>
                             </div>
@@ -186,8 +191,8 @@
                     </div>
                     </fieldset>
                     <div class="calc-reset mb-3 mt-4 d-flex justify-content-center gap-2">
-                        <input class="form-control btn btn-primary text-white calculate" type="submit" value="Calculate">
-                        <input class="form-control btn btn-primary text-white" type="submit reset" value="Reset">
+                        <input class="form-control bg-primary text-white calculate2" type="submit" value="Calculate">
+                        <input class="form-control bg-primary text-white reset2" type="submit" value="Reset">
                     </div>
                 </form>
             </div>
