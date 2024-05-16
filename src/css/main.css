@@ -12047,6 +12047,27 @@ header {
     padding: 10%;
   }
 }
-.container {
-  width: 90%;
+.calc-reset {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calc-reset input {
+  width: 12rem;
+}
+
+@media (max-width: 768px) {
+  .calc-reset {
+    flex-wrap: wrap;
+  }
+  .percentage {
+    margin-left: 3%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .percentage {
+    margin-left: 3%;
+  }
 }/*# sourceMappingURL=main.css.map */

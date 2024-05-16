@@ -102,6 +102,46 @@ header {
 }
 
 // POPULATION CALCULATOR
-.container {
-    @include customContainer2();
+// .container {
+//     @include customContainer2();
+// }
+// .filter-name-wrapper {
+//     width: 20%;
+// }
+// .filter-group {
+//     width: 15%;
+// }
+// .output {
+//     width: 5%;
+// }
+.calc-reset {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.calc-reset input {
+    width: 12rem;
+}
+
+// .calc-reset .btn-primary {
+//     width: 100px; /* Adjust the width as needed */
+//     height: 40px; /* Adjust the height as needed */
+//     padding: 5px 10px; /* Adjust padding as needed */
+//     font-size: 14px; /* Adjust font size as needed */
+//   }
+
+
+@media (max-width: 768px) {
+    .calc-reset {
+        flex-wrap: wrap;
+    }
+    .percentage {
+        margin-left: 3%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .percentage {
+        margin-left: 3%;
+    }
 }
