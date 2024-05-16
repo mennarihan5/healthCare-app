@@ -12058,6 +12058,10 @@ header {
   width: 12rem;
 }
 
+.filter-row {
+  margin-bottom: 3%;
+}
+
 @media (max-width: 768px) {
   .calc-reset {
     flex-wrap: wrap;
