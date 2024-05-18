@@ -16,6 +16,19 @@ const populationSubGroup = document.querySelectorAll('.population-sub-group');
 const populationForm = document.querySelector('.population-form');
 
 
+patientGroup.forEach((patient) => {
+    patient.addEventListener('click', () => {
+      const existingRows = filterRowWrapper.querySelectorAll('.filter-row').length;
+  
+      if (existingRows < 4) {
+        const template = document.getElementById('filterRowTemplate');
+        const newRow = template.content.cloneNode(true); 
+        filterRowWrapper.appendChild(newRow);
+      }
+    });
+  });
+
+
 // addFilter.addEventListener('click', () => {
 //     if (populationSubGroup.length < 4) {
 //         const firstSubGroup = populationSubGroup[0];
@@ -32,11 +45,11 @@ const populationForm = document.querySelector('.population-form');
  
 // })
 
-calculate.addEventListener('click', (event) => {
-    event.preventDefault();
-    fieldset.disabled = false;
-    console.log(fieldset)
-})
+// calculate.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     fieldset.disabled = false;
+//     console.log(fieldset)
+// })
 
 
 
@@ -100,29 +113,29 @@ filterInput2.forEach((filter, index) => {
     })
 })
 
-patientGroup.forEach((patient) => {
-    patient.addEventListener('click', () => {
-        const existingRows = filterRowWrapper.querySelectorAll('.filter-row').length;
+// patientGroup.forEach((patient) => {
+//     patient.addEventListener('click', () => {
+//         const existingRows = filterRowWrapper.querySelectorAll('.filter-row').length;
 
-        if (existingRows < 5) {
-            const firstFilterRow = filterRow[0]; 
+//         if (existingRows < 5) {
+//             const firstFilterRow = filterRow[0]; 
 
-            filterRowWrapper.appendChild(firstFilterRow.cloneNode(true));
-        } 
-    });
-});
+//             filterRowWrapper.appendChild(firstFilterRow.cloneNode(true));
+//         } 
+//     });
+// });
 
-patientGroup2.forEach((patient) => {
-    patient.addEventListener('click', () => {
-        const existingRows = filterRowWrapper2.querySelectorAll('.filter-row').length;
+// patientGroup2.forEach((patient) => {
+//     patient.addEventListener('click', () => {
+//         const existingRows = filterRowWrapper2.querySelectorAll('.filter-row').length;
 
-        if (existingRows < 3) {
-            const firstFilterRow = filterRow[0]; 
+//         if (existingRows < 3) {
+//             const firstFilterRow = filterRow[0]; 
 
-            filterRowWrapper2.appendChild(firstFilterRow.cloneNode(true));
-        } 
-    });
-});
+//             filterRowWrapper2.appendChild(firstFilterRow.cloneNode(true));
+//         } 
+//     });
+// });
 
 
 

@@ -43,16 +43,17 @@
                             </div>
                         </div>
                     <div class="filter-row-wrapper col-lg-10 col-md-5 row">
+                        <template id="filterRowTemplate">
                         <div class="filter-row row">
                             <div class="filter-group col-lg-2 col-md-5">
                                 <div class="mb-3">
-                                    <label class="mb-3 patient-group" for="filter-input">Patient group +</label>
+                                    <!-- <label class="mb-3 patient-group" for="filter-input">Patient group +</label> -->
                                     <input class="form-control filter-input" type="text" id="filter-input">
                                 </div>
                             </div>
                             <div class="percentage col-lg-4 col-md-5">
                                 <div class="mb-3">
-                                    <label class="mb-3" for="percentage-input">Population percentage</label>
+                                    <!-- <label class="mb-3" for="percentage-input">Population percentage</label> -->
                                     <div class="percentage-input-wrapper row">
                                         <input class="form-control col percentage-input" type="number" id="percentage-input" placeholder="60">
                                         <span class="col-1">%</span>
@@ -68,11 +69,42 @@
                             </div>
                             <div class="description col-lg-3 col-md-5">
                                 <div class="mb-3">
-                                    <label class="mb-3" for="desc-input">Description</label>
+                                    <!-- <label class="mb-3" for="desc-input">Description</label> -->
                                     <input class="form-control" type="text" id="desc-input">
                                 </div>
                             </div>
                         </div>
+                    </template>
+                    <div class="filter-row row">
+                        <div class="filter-group col-lg-2 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3 patient-group" for="filter-input">Patient group +</label>
+                                <input class="form-control filter-input" type="text" id="filter-input">
+                            </div>
+                        </div>
+                        <div class="percentage col-lg-4 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="percentage-input">Population percentage</label>
+                                <div class="percentage-input-wrapper row">
+                                    <input class="form-control col percentage-input" type="number" id="percentage-input" placeholder="60">
+                                    <span class="col-1">%</span>
+                                    <span class="number col-3">Number</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="output col-lg-1">
+                            <div class="mb-3">
+                                <label class="mb-3" for="output-input">&nbsp</label>
+                                <input class="form-control col" type="text" id="output-input">
+                            </div>
+                        </div>
+                        <div class="description col-lg-3 col-md-5">
+                            <div class="mb-3">
+                                <label class="mb-3" for="desc-input">Description</label>
+                                <input class="form-control" type="text" id="desc-input">
+                            </div>
+                        </div>
+                    </div>
                         <div class="filter-row row">
                             <div class="filter-group col-lg-2 col-md-5">
                                 <div class="mb-3">
