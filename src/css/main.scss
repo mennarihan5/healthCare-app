@@ -102,18 +102,31 @@ header {
 }
 
 // POPULATION CALCULATOR
-// .container {
-//     @include customContainer2();
-// }
-// .filter-name-wrapper {
-//     width: 20%;
-// }
-// .filter-group {
-//     width: 15%;
-// }
-// .output {
-//     width: 5%;
-// }
+form:first-of-type, form:last-of-type {
+    border: 1px solid $lightGrey;
+    border-radius: 15px;
+    padding: 2% 5%;
+    margin-bottom: 15%;
+    height: auto;
+}
+.population-name-wrapper .form-control {
+    width: 38%;
+}
+.filter-row {
+    margin-bottom: 3%;
+}
+.filter-name-wrapper .form-control {
+    width: 98%;
+}
+.output-box {
+    border: 1px solid $lightGrey;
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+    // margin-left: 12%;
+}
+.percentage-icon {
+    font-size: 1.2rem;
+}
 .calc-reset {
     margin: auto;
     width: 50%;
@@ -123,16 +136,12 @@ header {
 .calc-reset input {
     width: 12rem;
 }
-.filter-row {
-    margin-bottom: 3%;
+.percentage-input-wrapper {
+    margin-right: 5%;
 }
-// .calc-reset .btn-primary {
-//     width: 100px; /* Adjust the width as needed */
-//     height: 40px; /* Adjust the height as needed */
-//     padding: 5px 10px; /* Adjust padding as needed */
-//     font-size: 14px; /* Adjust font size as needed */
-//   }
-
+.percentage-label {
+    margin-left: -3%;
+}
 
 @media (max-width: 768px) {
     .calc-reset {
@@ -141,9 +150,42 @@ header {
     .percentage {
         margin-left: 3%;
     }
+    form:first-of-type {
+        border: none;
+        padding: 0;
+    }
+    .population-name-wrapper .form-control {
+        width: 100%;
+    }
+    .filter-group .form-control {
+        width: 100%;
+    }
+    .description .form-control {
+        width: 100%;
+    }
+    .percentage-input {
+        margin-left: 1%;
+    }
+    .description {
+        margin-bottom: 15%;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .percentage {
         margin-left: 3%;
+    }
+    .filter .form-control {
+        width: 94%;
+    }
+    .patient-group, .percentage-label, .output, .description {
+        text-wrap: nowrap;
+    }
+    .output {
+        margin-right: 4%;
+    }
+}
+@media (min-width: 991px) and (max-width: 1200px){
+    .filter .form-control {
+        width: 89%;
     }
 }
